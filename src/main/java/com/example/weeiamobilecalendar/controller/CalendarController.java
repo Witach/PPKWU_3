@@ -1,15 +1,20 @@
 package com.example.weeiamobilecalendar.controller;
 
-import org.apache.tomcat.util.http.fileupload.IOUtils;
+import com.example.weeiamobilecalendar.service.WeeiaCalendarParser;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
-import java.io.InputStream;
+import javax.websocket.server.PathParam;
 
-@Controller
-@RequestMapping("/calendar")
+@RestController
 public class CalendarController {
+
+    @Autowired
+    WeeiaCalendarParser weeiaCalendarParser;
+
+    @GetMapping("/calendar")
+    String getCalendar(@RequestParam("year") String year, @RequestParam ("month") String month) {
+        return weeiaCalendarParser.fetchWeeiaCalendar(Long.parseLong(year),Long.parseLong(month));
+    }
 }
