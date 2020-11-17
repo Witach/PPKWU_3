@@ -5,7 +5,7 @@ import org.springframework.web.client.RestTemplate;
 
 
 @Service
-public class WeeiaCalendarParser {
+public class WeeiaCalendarFetcher {
 
      public String fetchWeeiaCalendar(long year, long month) {
          RestTemplate restTemplate = new RestTemplate();
@@ -14,6 +14,12 @@ public class WeeiaCalendarParser {
     }
 
     String makeUrlPath(long year, long month) {
-         return String.format("http://www.weeia.p.lodz.pl/pliki_strony_kontroler/kalendarz.php?rok=%s&miesiac=%s&lang=1", year, month);
+         var monthStr = "";
+         if(month < 10) {
+             monthStr = "0" + month;
+         } else  {
+             monthStr = "" + month;
+         }
+         return String.format("http://www.weeia.p.lodz.pl/pliki_strony_kontroler/kalendarz.php?rok=%s&miesiac=%s&lang=1", year, monthStr);
     }
 }
