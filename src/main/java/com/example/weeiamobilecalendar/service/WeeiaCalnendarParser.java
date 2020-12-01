@@ -5,15 +5,18 @@ import org.jsoup.nodes.Element;
 import org.jsoup.parser.Parser;
 import org.springframework.stereotype.Service;
 
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
 
 @Service
 public class WeeiaCalnendarParser {
-    public List<CalendarEvent> getObjecCalendarFromHtmlCalendar(String calendarHtml) {
+    public List<CalendarEvent> getObjecCalendarFromHtmlCalendar(String calendarHtml) throws IOException {
+        var targetStream = new ByteArrayInputStream(calendarHtml.getBytes());
         var listOfEvents = new LinkedList<CalendarEvent>();
-        var tag = Jsoup.parse(calendarHtml, "", Parser.xmlParser());
+        var tag = Jsoup.parse(targetStream, "UTF-8", "");
         var elements = tag.select("td.active");
         for (Element el: elements) {
             var calendarEvent =CalendarEvent.builder()

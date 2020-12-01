@@ -1,7 +1,10 @@
 package com.example.weeiamobilecalendar.service;
 
+import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+
+import java.nio.charset.StandardCharsets;
 
 
 @Service
@@ -9,6 +12,8 @@ public class WeeiaCalendarFetcher {
 
      public String fetchWeeiaCalendar(long year, long month) {
          RestTemplate restTemplate = new RestTemplate();
+         restTemplate.getMessageConverters()
+                 .add(0, new StringHttpMessageConverter(StandardCharsets.UTF_8));
         return restTemplate.getForEntity(makeUrlPath(year, month), String.class)
                 .getBody();
     }
