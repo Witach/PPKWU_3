@@ -1,47 +1,6 @@
-BEGIN:VCALENDAR
-BEGIN:VEVENT
-DTSTAMP:20201201T135555Z
-DTSTART;VALUE=DATE:20200309
-SUMMARY:First Step to Fields Medal
-END:VEVENT
-BEGIN:VEVENT
-DTSTAMP:20201201T135555Z
-DTSTART;VALUE=DATE:20200313
-SUMMARY:Finał konkursu InfoSukces
-END:VEVENT
-BEGIN:VEVENT
-DTSTAMP:20201201T135555Z
-DTSTART;VALUE=DATE:20200316
-SUMMARY:Matura próbna Matematyka podstawowa
-END:VEVENT
-BEGIN:VEVENT
-DTSTAMP:20201201T135555Z
-DTSTART;VALUE=DATE:20200317
-SUMMARY:Matura próbna Matematyka rozszerzona
-END:VEVENT
-BEGIN:VEVENT
-DTSTAMP:20201201T135555Z
-DTSTART;VALUE=DATE:20200318
-SUMMARY:Matura próbna Fizyka rozszerzona
-END:VEVENT
-BEGIN:VEVENT
-DTSTAMP:20201201T135555Z
-DTSTART;VALUE=DATE:20200319
-SUMMARY:Matura próbna Chemia rozszerzona
-END:VEVENT
-BEGIN:VEVENT
-DTSTAMP:20201201T135555Z
-DTSTART;VALUE=DATE:20200323
-SUMMARY:Finał konkursu Fascynująca Fizyka - poziom podstawowy
-END:VEVENT
-BEGIN:VEVENT
-DTSTAMP:20201201T135555Z
-DTSTART;VALUE=DATE:20200325
-SUMMARY:Finał konkursu Fascynująca Fizyka - poziom ponadpodstawowy
-END:VEVENT
-BEGIN:VEVENT
-DTSTAMP:20201201T135555Z
-DTSTART;VALUE=DATE:20200327
-SUMMARY:Finał konkursu Piękne doświadczenie\, Fascynujące Wyjaśnienie
-END:VEVENT
-END:VCALENDAR
+<iframe id="open-web-calendar" 
+    style="background:url('https://raw.githubusercontent.com/niccokunzmann/open-web-calendar/master/static/img/loaders/circular-loader.gif') center center no-repeat;"
+    src="https://open-web-calendar.herokuapp.com/calendar.html?url=https://raw.githubusercontent.com/Witach/PPKWU_3/master/example/2020-3.ics&amp;language=pl"
+    sandbox="allow-scripts allow-same-origin allow-top-navigation"
+    allowTransparency="true" scrolling="no" 
+    frameborder="0" height="600px" width="100%"></iframe>
