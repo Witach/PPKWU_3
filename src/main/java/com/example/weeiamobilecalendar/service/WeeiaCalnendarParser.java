@@ -19,9 +19,12 @@ public class WeeiaCalnendarParser {
         var tag = Jsoup.parse(targetStream, "UTF-8", "");
         var elements = tag.select("td.active");
         for (Element el: elements) {
+            var foundElemet = el.selectFirst("p");
+            if(foundElemet == null)
+                foundElemet = el.selectFirst("div");
             var calendarEvent =CalendarEvent.builder()
                     .dayOfMonth(Long.parseLong(el.selectFirst("a.active").text()))
-                    .description(el.selectFirst("p").text())
+                    .description(foundElemet.text())
                     .build();
             listOfEvents.add(calendarEvent);
         }
